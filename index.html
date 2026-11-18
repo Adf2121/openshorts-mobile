@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10131b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="OpenShorts">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <title>OpenShorts Mobile</title>
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><span class="logo">OS</span><div><b>OpenShorts</b><small>Mobile Studio</small></div></div>
+    <button id="settingsBtn" class="ghost" aria-label="Configuración">⚙</button>
+  </header>
+  <main>
+    <section class="welcome">
+      <p class="eyebrow">CREA · RECORTA · PUBLICA</p>
+      <h1>Tu estudio de Shorts,<br><em>en el iPhone.</em></h1>
+      <p class="muted">Prototipo móvil independiente. Tus vídeos seleccionados permanecen en tu dispositivo mientras trabajas.</p>
+    </section>
+    <section class="modules">
+      <button class="module active" data-panel="clips"><span>✂️</span><b>Clip Generator</b><small>Preparar clips verticales</small></button>
+      <button class="module" data-panel="ai"><span>✨</span><b>AI Shorts</b><small>Vídeos generativos</small></button>
+      <button class="module" data-panel="youtube"><span>▶️</span><b>YouTube Studio</b><small>Ideas y metadatos</small></button>
+    </section>
+    <section id="clips" class="panel">
+      <div class="section-head"><div><p class="eyebrow">PROYECTO NUEVO</p><h2>Clip Generator</h2></div><span class="pill">Fase 1</span></div>
+      <label class="file-pick" for="videoInput"><span class="upload-icon">＋</span><b>Seleccionar vídeo</b><small>Elige un vídeo desde Fotos o Archivos</small></label>
+      <input id="videoInput" type="file" accept="video/*" hidden>
+      <div id="editor" class="editor hidden">
+        <video id="sourceVideo" controls playsinline></video>
+        <div class="file-name" id="fileName"></div>
+        <div class="fields">
+          <label>Inicio (segundos)<input id="startTime" type="number" min="0" step="0.5" value="0"></label>
+          <label>Final (segundos)<input id="endTime" type="number" min="0" step="0.5" value="15"></label>
+        </div>
+        <label class="caption-field">Texto de gancho<input id="hookText" maxlength="90" placeholder="Ej. El error que te cuesta dinero…"></label>
+        <div class="preview-wrap">
+          <div class="preview-label">VISTA PREVIA 9:16</div>
+          <div class="vertical-preview"><video id="previewVideo" muted playsinline></video><div id="hookOverlay" class="hook-overlay">Tu gancho aparecerá aquí</div></div>
+        </div>
+        <div class="action-grid">
+          <button id="previewBtn" class="secondary">▶ Previsualizar</button>
+          <button id="exportBtn" class="primary">⬇ Exportar MP4</button>
+        </div>
+        <div class="progress-track"><div id="progressBar"></div></div>
+        <p id="status" class="status">El procesamiento se realiza en el navegador. Para una primera prueba, utiliza clips cortos de 15–60 segundos.</p>
+        <div id="exportResult" class="export-result hidden"></div>
+      </div>
+    </section>
+    <section id="ai" class="panel hidden">
+      <p class="eyebrow">MÓDULO PREPARADO</p><h2>AI Shorts</h2>
+      <p class="muted">Aquí conectaremos la creación de guiones, actores, voces y vídeo generativo mediante proveedores compatibles.</p>
+      <div class="notice">La generación de vídeo requiere servicios externos y puede tener costes por uso.</div>
+    </section>
+    <section id="youtube" class="panel hidden">
+      <p class="eyebrow">MÓDULO PREPARADO</p><h2>YouTube Studio</h2>
+      <p class="muted">Espacio reservado para títulos, descripciones, capítulos y miniaturas asistidos por IA.</p>
+    </section>
+    <section id="settings" class="panel hidden">
+      <p class="eyebrow">PREFERENCIAS</p><h2>Configuración</h2>
+      <p class="muted">En esta fase no introduzcas claves API. La conexión segura con los proveedores se implementará más adelante.</p>
+      <div class="notice">Las claves no deben quedar expuestas en el código público de una PWA.</div>
+    </section>
+    <footer>OpenShorts Mobile · Prototipo de adaptación para iOS</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

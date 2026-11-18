@@ -1,0 +1,9 @@
+{
+  "name":"OpenShorts Mobile",
+  "short_name":"OpenShorts",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#10131b",
+  "theme_color":"#10131b",
+  "description":"Estudio móvil para preparar vídeos cortos verticales"
+}
