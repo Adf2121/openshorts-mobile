@@ -1,9 +1,1 @@
-{
-  "name":"OpenShorts Mobile",
-  "short_name":"OpenShorts",
-  "start_url":"./",
-  "display":"standalone",
-  "background_color":"#10131b",
-  "theme_color":"#10131b",
-  "description":"Estudio móvil para preparar vídeos cortos verticales"
-}
+{"name": "OpenShorts AI Studio", "short_name": "OpenShorts", "start_url": "./", "display": "standalone", "background_color": "#0c1220", "theme_color": "#0c1220"}
